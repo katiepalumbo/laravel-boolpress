@@ -5,13 +5,16 @@
 
       <div class="row">
         <div class="col-6" v-for="post in posts" :key="post.id">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">{{ post.title }}</h5>
-              <p class="card-text">{{ post.content }}</p>
-              <a href="#" class="btn btn-primary">See Full Post</a>
-            </div>
-          </div>
+        <!-- we created a component for "Post" 
+            instead of using the previous structure 
+            we passed the data through props -->
+          <Post
+                :title='post.title'
+                :content='post.content'
+                :slug='post.slug'
+                :category='post.category'
+                :tags='post.tags'
+            />
         </div>
       </div>
 
@@ -27,8 +30,13 @@
 </template>
 
 <script>
+import Post from '../components/Post';
+
 export default {
   name: "Main",
+  components: {
+      Post
+  },
   data() {
     return {
       posts: [],

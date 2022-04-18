@@ -2,21 +2,11 @@
     <nav class="navbar navbar-expand navbar-light bg-light">
     <a class="navbar-brand" href="#">Boolpress</a>
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <!-- <a class="nav-link" href="/">Home</a> -->
-                <router-link class="nav-link" :to="{name: 'home'}">Home</router-link>
-            </li>
-            <li class="nav-item">
-                <!-- <a class="nav-link" href="/chi-siamo">Chi Siamo</a> -->
-                <router-link class="nav-link" :to="{name: 'about'}">About</router-link>
-            </li>
-            <li class="nav-item">
-                <!-- <a class="nav-link" href="/contatti">Contatti</a> -->
-                <router-link class="nav-link" :to="{name: 'contact'}">Contact</router-link>
-            </li>
-            <li class="nav-item">
-                <!-- <a class="nav-link" href="/contatti">Contatti</a> -->
-                <router-link class="nav-link" :to="{name: 'posts'}">Blog</router-link>
+            <!-- we included v-for here to cycle through the menu arrays 
+                instead of using list items for each one
+                arrays are found in the data portion below -->
+            <li class="nav-item" v-for="menuItem in menuItems" :key="menuItem.routeName">
+                <router-link class="nav-link" :to="{name: menuItem.routeName}">{{menuItem.label}}</router-link>
             </li>
         </ul>
 
@@ -32,7 +22,29 @@
 
 <script>
 export default {
-    name: 'Header'
+    name: 'Header',
+        data() {
+            return {
+                menuItems: [
+                    {
+                        routeName: 'home',
+                        label: 'Home'
+                    },
+                    {
+                        routeName: 'about',
+                        label: 'About Us'
+                    },
+                    {
+                        routeName: 'contact',
+                        label: 'Contact Us'
+                    },
+                    {
+                        routeName: 'blog',
+                        label: 'Blog'
+                    },
+                ]
+            }
+    }
 
 }
 </script>

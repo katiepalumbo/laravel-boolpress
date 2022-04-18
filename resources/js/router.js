@@ -8,6 +8,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Posts from './pages/Posts';
 import SinglePost from './pages/SinglePost';
+import NotFound from './pages/NotFound';
 
 const router = new VueRouter({
     mode: "history",
@@ -18,18 +19,18 @@ const router = new VueRouter({
             component: Home
         },
         {
-            path: '/chi-siamo',
+            path: '/about',
             name: 'about',
             component: About
         },
         {
-            path: '/contatti',
+            path: '/contact',
             name: 'contact',
             component: Contact
         },
         {
-            path: '/posts',
-            name: 'posts',
+            path: '/blog',
+            name: 'blog',
             component: Posts
         },
         {
@@ -37,6 +38,11 @@ const router = new VueRouter({
             name: 'single-post',
             component: SinglePost
         },
+        {
+            path: '/:pathMatch(.*)*', 
+            name: 'not-found',
+            component: NotFound
+        }
     ]
 });
 
