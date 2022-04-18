@@ -16,7 +16,6 @@
                         <th scope="col">Content</th>
                         <th scope="col">Slug</th>
                         <th scope="col">Category</th>
-                        <th scope="col">Tags</th>
                         <th scope="col">Options</th>
                     </tr>
                     </thead>

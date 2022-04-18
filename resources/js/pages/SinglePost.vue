@@ -4,6 +4,7 @@
             <div class="col-12">
                 <div v-if="post">
                     <h1>{{post.title}}</h1>
+                    <img class="img-fluid" :src="post.cover" :alt="post.title">
                     <h3 v-if="post.category">Categoria: {{post.category.name}}</h3>
                     <p>{{post.content}}</p>
                     <p>Tags:</p>
@@ -26,15 +27,20 @@ export default {
                 post: null
             }
     },
+    methods: {
+        getPost() {
+             const slug = this.$route.params.slug;
+            axios.get('/api/posts/' + slug).then(response => {
+                if (response.data.success == false) {
+                    this.$router.push({name: 'not-found'}); //faccio redirect dentro alla rotta che mi gestisce la pagina non trovata di router.js
+                } else {
+                    this.post = response.data.result;
+                }
+            });
+        }
+    },
     mounted() {
-        const slug = this.$route.params.slug;
-        axios.get('/api/posts/' + slug).then(response => {
-            if (response.data.success == false) {
-                this.$router.push({name: 'not-found'}); //faccio redirect dentro alla rotta che mi gestisce la pagina non trovata di router.js
-            } else {
-                this.post = response.data.result;
-            }
-        });
+        this.getPost();
     }
 
 }

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Post;
 use Illuminate\Http\Request;
 
+
 class PostController extends Controller
 {
     /**
@@ -13,7 +14,7 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
 
         //$posts = Post::with(['category'])->get(); 
@@ -21,6 +22,14 @@ class PostController extends Controller
         //$posts = Post::paginate(6);
 
         $posts = Post::with(['category', 'tags'])->paginate(3);
+
+        $posts->each(function($post) {
+            if ($post->cover) {
+                $post->cover = url('storage/'.$post->cover);
+            } else {
+                $post->cover = url('img/fallback_img.jpg');
+            }
+        });
 
         return response()->json(
             [
@@ -34,6 +43,12 @@ class PostController extends Controller
     {
 
         $post = Post::where('slug', $slug)->with(['category', 'tags'])->first();
+
+        if ($post->cover) {
+            $post->cover = url('storage/'.$post->cover);
+        } else {
+            $post->cover = url('img/fallback_img.jpg');
+        }
 
         if ($post) {
             return response()->json(

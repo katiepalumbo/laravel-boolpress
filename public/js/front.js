@@ -2013,9 +2013,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Post',
-  props: ['title', 'content', 'slug', 'category', 'tags'],
+  props: ['img', 'title', 'content', 'slug', 'category', 'tags'],
   data: function data() {
     return {
       strTruncateLen: 50
@@ -2163,9 +2164,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "Main",
+  name: 'Posts',
   components: {
     Post: _components_Post__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
@@ -2227,6 +2229,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'SinglePost',
   data: function data() {
@@ -2234,20 +2237,25 @@ __webpack_require__.r(__webpack_exports__);
       post: null
     };
   },
+  methods: {
+    getPost: function getPost() {
+      var _this = this;
+
+      var slug = this.$route.params.slug;
+      axios.get('/api/posts/' + slug).then(function (response) {
+        if (response.data.success == false) {
+          _this.$router.push({
+            name: 'not-found'
+          }); //faccio redirect dentro alla rotta che mi gestisce la pagina non trovata di router.js
+
+        } else {
+          _this.post = response.data.result;
+        }
+      });
+    }
+  },
   mounted: function mounted() {
-    var _this = this;
-
-    var slug = this.$route.params.slug;
-    axios.get('/api/posts/' + slug).then(function (response) {
-      if (response.data.success == false) {
-        _this.$router.push({
-          name: 'not-found'
-        }); //faccio redirect dentro alla rotta che mi gestisce la pagina non trovata di router.js
-
-      } else {
-        _this.post = response.data.result;
-      }
-    });
+    this.getPost();
   }
 });
 
@@ -3541,6 +3549,11 @@ var render = function () {
       [
         _c("h2", { staticClass: "card-title" }, [_vm._v(_vm._s(_vm.title))]),
         _vm._v(" "),
+        _c("img", {
+          staticClass: "img-fluid",
+          attrs: { src: _vm.img, alt: "title" },
+        }),
+        _vm._v(" "),
         _c("h4", { staticClass: "card-text" }, [
           _vm._v(_vm._s(_vm.category ? _vm.category.name : " ")),
         ]),
@@ -3747,6 +3760,7 @@ var render = function () {
                   slug: post.slug,
                   category: post.category,
                   tags: post.tags,
+                  img: post.cover,
                 },
               }),
             ],
@@ -3834,6 +3848,11 @@ var render = function () {
         _vm.post
           ? _c("div", [
               _c("h1", [_vm._v(_vm._s(_vm.post.title))]),
+              _vm._v(" "),
+              _c("img", {
+                staticClass: "img-fluid",
+                attrs: { src: _vm.post.cover, alt: _vm.post.title },
+              }),
               _vm._v(" "),
               _vm.post.category
                 ? _c("h3", [

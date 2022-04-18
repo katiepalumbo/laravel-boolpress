@@ -12,6 +12,16 @@
                     @csrf
                     @method('PUT')
 
+                    @if ($post->cover)
+                        <p>Current Image</p>
+                        <img class="img-thumbnail" src="{{asset('storage/' . $post->cover)}}" alt="{{$post->title}}">
+                    @endif
+
+                    <div class="form-group">
+                        <label for="image">Upload New Cover</label>
+                        <input class="form-control" type="file" name="image" id="image">
+                    </div>
+
                     <div class="form-group">
                         <label for="category_id">Category</label>
                         <select class="form-control" id="category_id" name="category_id">

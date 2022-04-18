@@ -3,6 +3,11 @@
 @section('content')
 
     <div class="container">
+            @if ($post->cover)
+                <img class="img-fluid" src="{{asset('storage/' . $post->cover)}}" alt="{{$post->title}}">
+            @else
+                <img class="img-fluid" src="{{asset('img/fallback_img.jpg')}}" alt="{{$post->title}}">
+            @endif
             <h1>{{$post->title}}</h1>
             <h6>{{$post->created_at}}</h6>
             <div class="card m-5" style="width: 50rem;">
