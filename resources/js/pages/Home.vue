@@ -1,15 +1,17 @@
 <template>
-  <main>
-    <router-view></router-view>
-  </main>
+    <div>
+        <h1>Welcome!</h1>
+    </div>
+  
 </template>
 
 <script>
 export default {
-  name: "Main",
+    name: 'Home'
 
-};
+}
 </script>
 
 <style>
+
 </style>

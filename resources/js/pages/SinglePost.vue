@@ -1,15 +1,14 @@
 <template>
-  <main>
-    <router-view></router-view>
-  </main>
+  <div>{{$route.params.slug}}</div>
 </template>
 
 <script>
 export default {
-  name: "Main",
+    name: 'SinglePost'
 
-};
+}
 </script>
 
 <style>
+
 </style>
