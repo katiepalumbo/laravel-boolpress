@@ -21,7 +21,7 @@ class PostController extends Controller
 
         //$posts = Post::paginate(6);
 
-        $posts = Post::with(['category', 'tags'])->paginate(3);
+        $posts = Post::with(['category', 'tags'])->paginate(6);
 
         $posts->each(function($post) {
             if ($post->cover) {

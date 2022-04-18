@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="mt-10">
     <router-view></router-view>
   </main>
 </template>

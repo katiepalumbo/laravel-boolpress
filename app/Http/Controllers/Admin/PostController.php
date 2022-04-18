@@ -53,7 +53,7 @@ class PostController extends Controller
                 'content' => 'required|min:5',
                 'category_id' => 'nullable|exists:categories,id',
                 'tags' => 'nullable|exists:tags,id',
-                'iamge' => 'nullable|image|max:2048',
+                'image' => 'nullable|image|max:2048|mimes:jpeg,jpg,png,bmp,gif,svg',
 
             ]
         );
@@ -147,7 +147,7 @@ class PostController extends Controller
                 'content' => 'required|min:5',
                 'category_id' => 'nullable|exists:categories,id',
                 'tags' => 'nullable|exists:tags,id',
-                'image' => 'nullable|image|max:2048'
+                'image' => 'nullable|image|max:2048|mimes:jpeg,jpg,png,bmp,gif,svg'
 
             ]
         );

@@ -1912,6 +1912,89 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Footer'
 });
@@ -3424,9 +3507,87 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v("FOOTER")])
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "footer",
+      { staticClass: "page-footer bg-dark text-light font-small pt-4" },
+      [
+        _c("div", { staticClass: "container-fluid text-center text-md-left" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-6 mt-md-0 mt-3" }, [
+              _c("h5", { staticClass: "text-uppercase" }, [
+                _vm._v("the travel blog"),
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "Please visit the following links to take your travel game to a whole new level."
+                ),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("hr", { staticClass: "clearfix w-100 d-md-none pb-3" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-3 mb-md-0 mb-3" }, [
+              _c("h5", { staticClass: "text-uppercase" }, [_vm._v("Links")]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "list-unstyled" }, [
+                _c("li", [
+                  _c("a", { attrs: { href: "#!" } }, [_vm._v("Link 1")]),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#!" } }, [_vm._v("Link 2")]),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#!" } }, [_vm._v("Link 3")]),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#!" } }, [_vm._v("Link 4")]),
+                ]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-3 mb-md-0 mb-3" }, [
+              _c("h5", { staticClass: "text-uppercase" }, [_vm._v("Links")]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "list-unstyled" }, [
+                _c("li", [
+                  _c("a", { attrs: { href: "#!" } }, [_vm._v("Link 1")]),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#!" } }, [_vm._v("Link 2")]),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#!" } }, [_vm._v("Link 3")]),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("a", { attrs: { href: "#!" } }, [_vm._v("Link 4")]),
+                ]),
+              ]),
+            ]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "footer-copyright text-center py-3" }, [
+          _vm._v("© 2020 Copyright: \n        "),
+          _c("a", { attrs: { href: "/" } }, [_vm._v(" katiepalumbo.com")]),
+        ]),
+      ]
+    )
+  },
+]
 render._withStripped = true
 
 
@@ -3450,11 +3611,13 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "nav",
-    { staticClass: "navbar navbar-expand navbar-light bg-light" },
+    { staticClass: "navbar navbar-expand navbar-light bg-dark mb-10" },
     [
-      _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-        _vm._v("Boolpress"),
-      ]),
+      _c(
+        "a",
+        { staticClass: "navbar-brand text-light", attrs: { href: "#" } },
+        [_vm._v("Boolpress")]
+      ),
       _vm._v(" "),
       _c(
         "ul",
@@ -3467,7 +3630,7 @@ var render = function () {
               _c(
                 "router-link",
                 {
-                  staticClass: "nav-link",
+                  staticClass: "nav-link text-light",
                   attrs: { to: { name: menuItem.routeName } },
                 },
                 [_vm._v(_vm._s(menuItem.label))]
@@ -3518,7 +3681,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("main", [_c("router-view")], 1)
+  return _c("main", { staticClass: "mt-10" }, [_c("router-view")], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -19567,7 +19730,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _views_App__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./views/App */ "./resources/js/views/App.vue");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./router */ "./resources/js/router.js");
+/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./router */ "./resources/js/router.js");
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
@@ -19579,7 +19742,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
   render: function render(h) {
     return h(_views_App__WEBPACK_IMPORTED_MODULE_0__["default"]);
   },
-  router: _router__WEBPACK_IMPORTED_MODULE_3__["default"]
+  router: _router__WEBPACK_IMPORTED_MODULE_2__["default"]
 });
 
 /***/ }),
